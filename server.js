@@ -6,6 +6,6 @@ server.use('/salutGraphQL',expressGraphQL({
   graphiql:true
 }));
 
-server.listen(3500,() => {
+server.listen(4000,() => {
   console.log('Serveur en écoute sur le port 3500');
 });
