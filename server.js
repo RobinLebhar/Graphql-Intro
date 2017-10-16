@@ -1,11 +1,11 @@
-const express = require('express')
-const graphqlExpress = require('express-graphql')
-const server = express()
+const express = require('express');
+const expressGraphQL = require('express-graphql');
+const server = express();
 
-server.use('graphql',graphqlExpress({
+server.use('/salutGraphQL',expressGraphQL({
   graphiql:true
-}))
+}));
 
 server.listen(4000,() => {
-  console.log('Serveur en écoute sur le port 4000');
-})
+  console.log('Serveur en écoute sur le port 3500');
+});
