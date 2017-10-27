@@ -1,0 +1,15 @@
+{
+    "users": [
+      { "id": 1, "firstName": "Robin"},
+      { "id": 2, "firstName": "Catherine"}
+    ],
+    "company": [
+      { "id": 1, "name": "Nike"},
+      { "id": 2, "name": "Orange"}
+    ],
+    "position": [
+      { "id" : 1,"name": "Développeur" },
+      { "id" : 2,"name": "Manager" },
+      { "id" : 3,"name": "Graphiste" }
+    ]
+  }

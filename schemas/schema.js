@@ -8,8 +8,8 @@ const {
 } = graphql;
 
 const users = [
-    {id:1,firstName:'Robin',age:24},
-    {id:2,firstName:'Catherine',age:25}
+    {id:'1' ,firstName:'Robin',age:24},
+    {id:'2',firstName:'Catherine',age:25}
 ];
 const UserType = new GraphQLObjectType({
     name:'User',
@@ -28,7 +28,7 @@ const RootQuery = new GraphQLObjectType({
             args:{id:{type:GraphQLString}},
             //  Ici on va récuperer les données avec les parametres en entrée
             resolve(parentValue,args){
-                _.find(users,{id:args.id})
+             return _.find(users,{id:args.id});
             }
         }
     }
