@@ -9,18 +9,34 @@ const {
     GraphQLSchema
 } = graphql;
 
-const users = [
-    {id:'1' ,firstName:'Robin',age:24},
-    {id:'2',firstName:'Catherine',age:25}
-];
+const CompanyType = new GraphQLObjectType({
+    name:'Company',
+    fields: {
+        id: {type : GraphQLString},
+        name: { type: GraphQLString },
+    }
+});
+
 const UserType = new GraphQLObjectType({
     name:'User',
     fields: {
         id: {type : GraphQLString},
         firstName: { type: GraphQLString },
-        age: { type: GraphQLInt}
+        age: { type: GraphQLInt},
+       company:{
+           type:CompanyType,
+           resolve(parentValue,args){
+           return axios.get(`http://localhost:3000/companies/${parentValue.idCompany}`).then( (response) => {
+                return response.data;
+            })
+            
+        }
+       }
     }
 });
+
+
+
 // Permet a graphql d'entrer dans le graph de notre application
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
