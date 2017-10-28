@@ -1,13 +1,14 @@
 {
     "users": [
-      { "id": 1, "firstName": "Robin"},
-      { "id": 2, "firstName": "Catherine"}
+      { "id": 1, "firstName": "Robin","idCompany":"3", "idPosition":"2"},
+      { "id": 2, "firstName": "Catherine","idCompany":"2", "idPosition":"3"}
     ],
-    "company": [
-      { "id": 1, "name": "Nike"},
-      { "id": 2, "name": "Orange"}
+    "companies": [
+      { "id": 1, "name": "Sun microsysteme"},
+      { "id": 2, "name": "Microsoft"},
+      { "id": 3, "name": "Apple"}
     ],
-    "position": [
+    "positions": [
       { "id" : 1,"name": "Développeur" },
       { "id" : 2,"name": "Manager" },
       { "id" : 3,"name": "Graphiste" }
