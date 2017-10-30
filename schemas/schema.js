@@ -7,7 +7,8 @@ const {
     GraphQLString,
     GraphQLInt,
     GraphQLList,
-    GraphQLSchema
+    GraphQLSchema,
+    GraphQLNonNull
 } = graphql;
 
 
@@ -46,6 +47,25 @@ const CompanyType = new GraphQLObjectType({
     })
 });
 
+const Mutation = new GraphQLObjectType({
+    name:'Mutation',
+    fields: {
+        addUser:{
+            type:UserType,
+            args:{
+                firstName:{type:new GraphQLNonNull(GraphQLString)},
+                age:{type:new GraphQLNonNull(GraphQLInt)},
+                companyId:{type:GraphQLString}
+            },
+            resolve(parentValue,args){
+                return axios.post(`http://localhost:3000/users`,{firstName:args.firstName,age:args.age}).then( (response) => {
+                    return response.data;
+                })
+            }
+        }
+    }
+})
+
 // Permet a graphql d'entrer dans le graph de notre application
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -73,6 +93,6 @@ const RootQuery = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-    query:RootQuery
+    query:RootQuery,
+    mutation:Mutation
 });
-
