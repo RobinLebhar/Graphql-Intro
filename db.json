@@ -17,6 +17,12 @@
       "firstName": "Sarah",
       "age": 25,
       "companyId": "2"
+    },
+    {
+      "id": "4",
+      "firstName": "Nelson",
+      "age": 24,
+      "companyId": "3"
     }
   ],
   "companies": [
