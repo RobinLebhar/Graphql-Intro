@@ -1,1 +1,0 @@
-ajouter company type au root query pour pouvoir query cette racine
