@@ -58,7 +58,7 @@ const Mutation = new GraphQLObjectType({
                 companyId:{type:GraphQLString}
             },
             resolve(parentValue,args){
-                return axios.post(`http://localhost:3000/users`,{firstName:args.firstName,age:args.age}).then( (response) => {
+                return axios.post(`http://localhost:3000/users`,{firstName:args.firstName,age:args.age,companyId:args.companyId,}).then( (response) => {
                     return response.data;
                 })
             }
